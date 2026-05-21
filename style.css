@@ -1,0 +1,441 @@
+/* --- CONFIGURAZIONE COLORI PSICODELICI / CYBERPUNK --- */
+:root {
+    --bg-dark: #0a0a12;
+    --card-bg: #121225;
+    --neon-pink: #ff0055;
+    --neon-cyan: #00f0ff;
+    --neon-green: #39ff14;
+    --neon-purple: #b026ff;
+    --neon-yellow: #ffee00;
+    --text-light: #f0f3f8;
+    --font-head: 'Cabinet Grotesk', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+    --brutal-shadow: 6px 6px 0px #000000;
+}
+
+/* --- RESET & SETUP SFONDO EXTRA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* Griglia Cyberpunk di Sfondo */
+.cyber-grid {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- NAV BAR FUORI DALLA NORMA --- */
+header {
+    border-bottom: 4px solid var(--text-light);
+    background: #000;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+}
+
+.brand-glitch {
+    font-family: var(--font-head);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-cyber-btn {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border: 2px solid var(--text-light);
+    background: var(--bg-dark);
+    box-shadow: 3px 3px 0px var(--text-light);
+    transition: all 0.2s ease;
+}
+
+.nav-cyber-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--neon-pink);
+    color: var(--neon-pink);
+    border-color: var(--neon-pink);
+}
+
+/* --- HERO SECTION --- */
+.hero-cyber {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 25px;
+    position: relative;
+}
+
+.hero-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.neon-tag-alert {
+    background: var(--neon-green);
+    color: #000;
+    font-weight: 700;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 20px;
+    transform: rotate(-1deg);
+    box-shadow: 3px 3px 0px #000;
+}
+
+.hyper-title {
+    font-family: var(--font-head);
+    font-size: 5.5rem;
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.text-neon-pink {
+    color: var(--neon-pink);
+    text-shadow: 3px 3px 0px var(--neon-cyan);
+}
+
+.hero-lead {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    max-width: 750px;
+    margin-bottom: 40px;
+    color: #a5a5c5;
+}
+
+/* Pulsanti Asimmetrici Brutalisti */
+.neo-btn {
+    display: inline-block;
+    font-family: var(--font-head);
+    text-decoration: none;
+    padding: 18px 36px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #000;
+    border: 3px solid #000;
+    text-transform: uppercase;
+    margin-right: 20px;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-pink {
+    background: var(--neon-pink);
+    box-shadow: 6px 6px 0px var(--neon-cyan);
+}
+.btn-cyan {
+    background: var(--neon-cyan);
+    box-shadow: 6px 6px 0px var(--neon-purple);
+}
+
+.neo-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
+}
+
+/* --- STRUTTURA DELLE SEZIONI --- */
+.section-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 25px;
+}
+
+.neon-section-title {
+    font-family: var(--font-head);
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.section-descr {
+    font-size: 1.2rem;
+    color: #8c8cb3;
+    margin-bottom: 50px;
+}
+
+/* --- POWER GRID INTERATTIVA (TABS) --- */
+.power-grid-wrapper {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+}
+
+.power-nodes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.node-btn {
+    background: var(--card-bg);
+    border: 3px solid #1f1f3d;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.2s ease;
+}
+
+.node-num {
+    font-family: var(--font-head);
+    font-size: 1.8rem;
+    color: rgba(255,255,255,0.2);
+}
+
+.node-txt {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.node-btn:hover, .node-btn.active {
+    background: #000;
+    border-color: var(--neon-cyan);
+    transform: translateX(10px);
+    box-shadow: -5px 0px 0px var(--neon-cyan);
+}
+
+.node-btn.active .node-num {
+    color: var(--neon-cyan);
+}
+
+/* Lo Schermo Dati Reattivo */
+.data-screen {
+    background: #000;
+    border: 4px solid var(--text-light);
+    padding: 45px;
+    box-shadow: var(--brutal-shadow);
+    position: relative;
+}
+
+.screen-panel { display: none; }
+.screen-panel.active { display: block; animation: flashEffect 0.3s ease; }
+
+.panel-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #000;
+}
+.badge-green { background: var(--neon-green); }
+.badge-pink { background: var(--neon-pink); }
+.badge-cyan { background: var(--neon-cyan); }
+.badge-purple { background: var(--neon-purple); }
+.badge-yellow { background: var(--neon-yellow); }
+
+.data-screen h3 {
+    font-family: var(--font-head);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.cyber-box {
+    margin-top: 30px;
+    padding: 20px;
+    border-left: 6px solid;
+    font-weight: 500;
+}
+.box-green { background: rgba(57, 255, 20, 0.08); border-color: var(--neon-green); color: var(--neon-green); }
+.box-purple { background: rgba(176, 38, 255, 0.08); border-color: var(--neon-purple); color: #d68aff; }
+
+.virus-matrix {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.virus-item {
+    background: #111;
+    border: 1px dashed var(--neon-pink);
+    padding: 12px;
+    font-weight: 500;
+}
+
+.cyber-list {
+    list-style: none;
+    margin-top: 20px;
+}
+.cyber-list li {
+    margin-bottom: 12px;
+    padding-left: 15px;
+    border-left: 3px solid var(--neon-cyan);
+}
+
+/* --- TABELLA BRUTALISTA A COLORI VIVI --- */
+.brutal-table-wrapper {
+    overflow-x: auto;
+    border: 4px solid #000;
+    box-shadow: 12px 12px 0px var(--neon-purple);
+}
+
+.brutal-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    min-width: 850px;
+}
+
+.brutal-table th, .brutal-table td {
+    padding: 20px;
+    border: 2px solid #000;
+}
+
+.brutal-table th {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.th-taylor { background: var(--neon-yellow); }
+.th-ford { background: var(--neon-cyan); }
+.th-tps { background: var(--neon-pink); }
+
+.subtitle-th {
+    font-size: 0.75rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.td-accent {
+    background: #000;
+    color: var(--neon-green);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.brutal-table tr:hover td:not(.td-accent) {
+    background: rgba(255,255,255,0.03);
+}
+
+/* --- CARTE MEGA-CORPS HOLOGRAFICHE --- */
+.cyber-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.neon-card {
+    background: #000;
+    border: 3px solid var(--text-light);
+    padding: 30px;
+    position: relative;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-glitch-title {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.card-status {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Differenti colorazioni sfacciate per carta */
+.card-pink { box-shadow: 6px 6px 0px var(--neon-pink); }
+.card-pink .card-glitch-title { color: var(--neon-pink); }
+.card-pink .card-status { color: var(--neon-cyan); }
+
+.card-cyan { box-shadow: 6px 6px 0px var(--neon-cyan); }
+.card-cyan .card-glitch-title { color: var(--neon-cyan); }
+.card-cyan .card-status { color: var(--neon-green); }
+
+.card-purple { box-shadow: 6px 6px 0px var(--neon-purple); }
+.card-purple .card-glitch-title { color: var(--neon-purple); }
+.card-purple .card-status { color: var(--neon-yellow); }
+
+.card-yellow { box-shadow: 6px 6px 0px var(--neon-yellow); }
+.card-yellow .card-glitch-title { color: var(--neon-yellow); }
+.card-yellow .card-status { color: var(--neon-pink); }
+
+.neon-card:hover {
+    transform: translate(-5px, -5px);
+}
+.card-pink:hover { box-shadow: 12px 12px 0px var(--neon-pink); }
+.card-cyan:hover { box-shadow: 12px 12px 0px var(--neon-cyan); }
+.card-purple:hover { box-shadow: 12px 12px 0px var(--neon-purple); }
+.card-yellow:hover { box-shadow: 12px 12px 0px var(--neon-yellow); }
+
+/* --- TERMINAL FOOTER --- */
+footer {
+    background: #000;
+    padding: 40px 25px;
+    border-top: 4px solid var(--text-light);
+    font-family: monospace;
+    color: #444466;
+}
+.footer-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* --- ANIMAZIONI --- */
+@keyframes flashEffect {
+    0% { opacity: 0; background: var(--neon-pink); }
+    50% { opacity: 0.5; background: rgba(0,0,0,0.5); }
+    100% { opacity: 1; background: #000; }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .power-grid-wrapper { grid-template-columns: 1fr; }
+    .hyper-title { font-size: 3.8rem; }
+}
+@media (max-width: 768px) {
+    nav, .nav-cyber-btn { display: none; }
+    .hyper-title { font-size: 2.8rem; }
+    .neo-btn { margin-bottom: 15px; width: 100%; text-align: center; }
+}
